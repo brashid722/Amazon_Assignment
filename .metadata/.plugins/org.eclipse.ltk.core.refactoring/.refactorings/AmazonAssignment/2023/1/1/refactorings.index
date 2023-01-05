@@ -1,0 +1,32 @@
+1672676439725	Move package
+1672676479908	Rename package 'clipBoardHealth.AmazonAssignment'
+1672676496289	Rename package 'clipBoardHealth.AmazonAssignment.pageObjects'
+1672676614243	Rename type 'LandingPage'
+1672677724495	Rename type 'BaseClass'
+1672694701926	Move package
+1672694742007	Rename package 'clipBoardHealth.pageObjects'
+1672694767812	Rename package 'clipBoardHealth.resources'
+1672694779332	Rename package 'com.clipboard.resources'
+1672694851660	Rename package 'clipBoardHealth.abstractComponents'
+1672694887124	Rename package 'com.clipboard.qa.resources'
+1672694979897	Rename package 'clipBoardHealth.TestCases'
+1672695048947	Rename resource 'GlobalData.properties'
+1672695253675	Move compilation unit
+1672697181168	Rename type 'BaseTestClass'
+1672697696698	Rename type 'assignmentClass'
+1672700716816	Move compilation unit
+1672700737989	Delete element
+1672764397863	Move package
+1672783626103	Move package
+1672788918833	Delete element
+1672791052873	Delete element
+1672849130166	Move compilation unit
+1672852196887	Move compilation unit
+1672852212686	Move compilation unit
+1672852246317	Rename package 'com.clipboard.qa.base'
+1672852261173	Rename package 'com.clipboard.qa.reports'
+1672855524065	Delete element
+1672870762921	Delete element
+1672871524250	Delete element
+1672872062362	Delete element
+1672875320015	Delete element

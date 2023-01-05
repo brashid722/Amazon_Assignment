@@ -1,0 +1,72 @@
+package com.clipboard.qa.testcases;
+
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.clipboard.qa.pages.AmazonLandingPage;
+import com.clipboard.qa.pages.ResultsPage;
+import com.clipboard.qa.utils.TestBase;
+import com.clipboard.qa.utils.Listeners;
+
+public class DisplayResult extends TestBase
+{
+	WebDriver driver;
+	ExtentTest test;
+	AmazonLandingPage landingpage;
+	ResultsPage resultspage;
+	Properties prop = new Properties();
+	
+	public DisplayResult()
+	{
+		super();
+	}
+	
+	@BeforeClass
+	
+	public void setUp() throws IOException
+	{
+		driver = initializeBrowser();
+		
+		Reporter.log("********* Application Started Successfully ********");
+		landingpage = new AmazonLandingPage(driver);
+		resultspage = new ResultsPage(driver);
+		
+	}
+
+	@Test
+	public void displayResult() throws IOException
+	{	
+		landingpage.clickHamburgerMenu();
+		Reporter.log("User clicked hamburger Menu");
+		landingpage.clickMainSection();
+		landingpage.clickSubSection();
+		Reporter.log("User selected TV, Appliances, Electronics']");
+		resultspage.selectBrandValue();
+		boolean status = resultspage.validateResultsPagePresence();
+		Assert.assertTrue(status, "Results page displayed successfully!");
+	}
+	
+	
+	  @Test 
+	  public void sortedResultsValidation() 
+	  {
+		  resultspage.selectDropdownValue("Price: High to Low"); 
+		  Reporter.log("User applied High to Low Price sorting");
+		  resultspage.clickSecondHighestPrice();
+		  Reporter.log("User clicked second highest priced item from the list");
+	  
+	  }
+	
+	@AfterClass
+	public void tearDown()
+	{
+		driver.close();
+	}
+}

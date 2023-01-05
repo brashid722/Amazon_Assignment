@@ -1,0 +1,114 @@
+package com.clipboard.qa.pages;
+
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import com.clipboard.qa.base.Keywords;
+import com.clipboard.qa.base.TestBase;
+
+public class ResultsPage extends TestBase
+{
+
+    static WebDriver driver;
+	
+	Keywords base = new Keywords(driver);
+	
+	public ResultsPage(WebDriver driver)
+	{
+		ResultsPage.driver = driver;
+	}
+	
+	WebElement brandFilters = driver.findElement(By.xpath("//span[normalize-space()='Brands']"));
+	
+	WebElement brandFilterName = driver.findElement(By.xpath("//span[@class='a-size-base a-color-base']"
+			+ "[normalize-space()='Samsung']"));
+	
+	WebElement sortDropdown = driver.findElement(By.cssSelector(".a-dropdown-label"));
+	
+	WebElement resultsData = driver.findElement(By.xpath("//span[text()='RESULTS']"));
+	
+	WebElement product = driver.findElement(By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[2]"));
+	
+	WebElement feature_item = driver.findElement(By.xpath("//h1[@class='a-size-base-plus a-text-bold']"));
+	
+	WebElement product_title = driver.findElement(By.xpath("//span[@id='productTitle']"));
+	
+	
+	
+	public void selectBrandValue()
+	{
+		Keywords.waitForElementPresence(brandFilters, "10");
+		Keywords.getText(brandFilterName);
+		Keywords.click(brandFilterName);
+	}
+	
+	public boolean validateResultsPagePresence()
+	{
+		return ((WebElement) resultsData).isDisplayed();
+	}
+	
+	public void selectDropdownValue(String fieldName, String dropdownValueOption)	
+	{
+		WebElement selectedValue = null;
+		WebElement sortDropdown = driver.findElement(By.xpath("//a[text()='"+ fieldName + "'"));
+		Keywords.waitForElementToBeClickable((By) sortDropdown, "10");
+		Keywords.click((By) sortDropdown);
+		switch (dropdownValueOption)
+		{
+		case "Featured":
+			selectedValue = driver.findElement(By.xpath("//span[text()='"+ dropdownValueOption + "']"));
+			break;
+		case "Price: High to Low":
+			selectedValue = driver.findElement(By.xpath("//span[text()='"+ dropdownValueOption + "']"));
+			break;
+		case "Price: Low to High":
+			selectedValue = driver.findElement(By.xpath("//span[text()='"+ dropdownValueOption + "']"));
+			break;
+		case "Avg. Customer Review":
+			selectedValue = driver.findElement(By.xpath("//span[text()='"+ dropdownValueOption + "']"));
+			break;
+		case "Newest Arrivals":
+			selectedValue = driver.findElement(By.xpath("//span[text()='"+ dropdownValueOption + "']"));
+			break;
+		}
+		Keywords.waitForElementToLoad((By) selectedValue, "10");
+		Keywords.click((By) selectedValue);
+	}
+	
+	public void clickSecondHighestPrice()
+	{
+		Keywords.click(product);
+		String expected_product_name = ((WebElement) product).getText();
+		String actual_product_title = ((WebElement) product_title).getText();
+		
+		String mainWindow = driver.getWindowHandle();
+		
+		//To handle new open window/windows
+		Set<String> new_windows = driver.getWindowHandles();
+		Iterator<String> i1 = new_windows.iterator();
+		
+		while(i1.hasNext())
+		{
+			String child_window = i1.next();
+			
+			if(!mainWindow.equalsIgnoreCase(child_window))
+			{
+				//Switch to child window
+				driver.switchTo().window(child_window);
+				Assert.assertEquals(actual_product_title, expected_product_name, "Actual and Expected "
+						+ "product title are equal.");
+				
+				boolean about_this_item_status = ((WebElement) feature_item).isDisplayed();
+				Assert.assertTrue(about_this_item_status, "About this Item section is present.");
+				
+				//closing the child window
+				driver.close();
+			}
+		}
+		driver.switchTo().window(mainWindow);
+	}
+	
+}

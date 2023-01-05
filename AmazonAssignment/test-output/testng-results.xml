@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Setting up reports and Test is getting ready]]>
+    </line>
+    <line>
+      <![CDATA[Setting up reports and Test is getting ready]]>
+    </line>
+    <line>
+      <![CDATA[Setting up reports and Test is getting ready]]>
+    </line>
+    <line>
+      <![CDATA[Setting up reports and Test is getting ready]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> id: nav-hamburger-menu]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> id: nav-hamburger-menu]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[contains(text(),'shop by category')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[contains(text(),'tv, audio & cameras')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[normalize-space()='Brands']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-size-base a-color-base'][normalize-space()='Samsung']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-size-base a-color-base'][normalize-space()='Samsung']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-button-text a-declarative']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-button-text a-declarative']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[text()='Price: High to Low']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[text()='Price: High to Low']]]]>
+    </line>
+    <line>
+      <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[@class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_2']//span[@class='a-size-base-plus a-color-base a-text-normal']]]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-01-04T17:41:28 EST" name="ClipBoard Suite" finished-at="2023-01-04T17:41:48 EST" duration-ms="20089">
+    <groups>
+    </groups>
+    <test started-at="2023-01-04T17:41:28 EST" name="ClipBoard Assignment" finished-at="2023-01-04T17:41:48 EST" duration-ms="20089">
+      <class name="com.clipboard.qa.testcases.DisplayResult">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.clipboard.qa.testcases.DisplayResult@4007f65e]" started-at="2023-01-04T17:41:28 EST" name="setUp" finished-at="2023-01-04T17:41:32 EST" duration-ms="4604" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Setting up reports and Test is getting ready]]>
+            </line>
+            <line>
+              <![CDATA[Setting up reports and Test is getting ready]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="displayResult()[pri:0, instance:com.clipboard.qa.testcases.DisplayResult@4007f65e]" started-at="2023-01-04T17:41:32 EST" name="displayResult" finished-at="2023-01-04T17:41:38 EST" duration-ms="5733" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> id: nav-hamburger-menu]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> id: nav-hamburger-menu]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[contains(text(),'shop by category')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[contains(text(),'tv, audio & cameras')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[contains(text(),'Televisions')]]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[normalize-space()='Brands']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-size-base a-color-base'][normalize-space()='Samsung']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-size-base a-color-base'][normalize-space()='Samsung']]]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- displayResult -->
+        <test-method signature="sortedResultsValidation()[pri:0, instance:com.clipboard.qa.testcases.DisplayResult@4007f65e]" started-at="2023-01-04T17:41:38 EST" name="sortedResultsValidation" finished-at="2023-01-04T17:41:48 EST" duration-ms="9481" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-button-text a-declarative']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //span[@class='a-button-text a-declarative']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[text()='Price: High to Low']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //a[text()='Price: High to Low']]]]>
+            </line>
+            <line>
+              <![CDATA[Error Waiting for Element:[[ChromeDriver: chrome on WINDOWS (e68e09e2a405864554b61ed71db3af2c)] -> xpath: //div[@class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_2']//span[@class='a-size-base-plus a-color-base a-text-normal']]]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- sortedResultsValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.clipboard.qa.testcases.DisplayResult@4007f65e]" started-at="2023-01-04T17:41:48 EST" name="tearDown" finished-at="2023-01-04T17:41:48 EST" duration-ms="211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.clipboard.qa.testcases.DisplayResult -->
+    </test> <!-- ClipBoard Assignment -->
+  </suite> <!-- ClipBoard Suite -->
+</testng-results>

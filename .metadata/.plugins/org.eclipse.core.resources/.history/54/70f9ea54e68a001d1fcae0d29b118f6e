@@ -1,0 +1,75 @@
+package com.clipboard.qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.clipboard.qa.pages.AmazonLandingPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseTestClass {
+	
+	static WebDriver driver;
+	public AmazonLandingPage landingPage;
+	static Properties prop;
+	
+	public BaseTestClass()
+	{
+		try {
+			prop = new Properties();
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+					+"//src//main//java//clipBoardHealth//resources//GlobalData.properties");
+			
+			prop.load(fis);
+		}
+		catch(FileNotFoundException E) {
+			E.printStackTrace();
+		}
+		catch (IOException E) {
+			E.printStackTrace();
+		}
+	}
+	
+	public static void initializeDriver() throws IOException
+	{
+		String browserName = prop.getProperty("browser");
+		
+		if(browserName.equalsIgnoreCase("chrome"))
+		{
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+		
+		else if(browserName.equalsIgnoreCase("firefox"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+		return driver;
+	}
+	
+	@BeforeMethod
+	public AmazonLandingPage launchApplication() throws IOException
+	{
+		driver = initializeDriver();
+		landingPage = new AmazonLandingPage(driver);
+		landingPage.goToURL();
+		return landingPage;
+	}
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.close();
+	}
+
+}

@@ -1,0 +1,111 @@
+package com.clipboard.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import com.clipboard.qa.base.Keywords;
+import com.clipboard.qa.base.TestBase;
+
+public class AmazonLandingPage extends TestBase
+{
+	
+	WebDriver ldriver;
+	
+	Keywords base = new Keywords(ldriver);
+	
+	public AmazonLandingPage(WebDriver rdriver)
+	{
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+	}
+	
+	@FindBy(id="nav-hamburger-menu")
+	WebElement hamburgerMenu;
+	
+	//WebElement hamburgerMenu = driver.findElement(By.id("nav-hamburger-menu"));
+	
+	@FindBy(xpath="//div[contains(text(),'shop by category')]")
+	WebElement mainSection;
+	
+	//WebElement mainSection = driver.findElement(By.xpath("//div[contains(text(),'shop by category')]"));
+	
+	@FindBy(xpath="//*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']")
+	WebElement subSection;
+	
+	@FindBy(xpath="//div[contains(text(),'tv, audio & cameras')]")
+	WebElement selectedCategorySection;
+	
+	@FindBy(xpath="//a[contains(text(),'Televisions')]")
+	WebElement selectedCategorySubSection;
+	
+	
+	//WebElement subSection = driver.findElement(By.xpath("//*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']"));
+	
+	/*
+	 * WebElement selectedCategorySection =
+	 * driver.findElement(By.xpath("//div[contains(text(),'tv, audio & cameras')]"))
+	 * ;
+	 * 
+	 * WebElement selectedCategorySubSection =
+	 * driver.findElement(By.xpath("//a[contains(text(),'Televisions')]"));
+	 */
+	
+	public void goToURL()
+	{
+		driver.get("https://www.amazon.in/");
+	}
+	
+	public String getText(WebElement element)
+	{
+		System.out.println("Text for element fetched is:" + element.getText());
+		Keywords.waitForElementToLoad(element, "10");
+		return element.getText();
+	}
+	
+	public void clickHamburgerMenu()
+	{
+		String hamburgerText = Keywords.getText(hamburgerMenu);
+		System.out.println("Hamburger text is: " + hamburgerText);
+		Keywords.waitForElementToBeClickable(hamburgerMenu, "10");
+		Keywords.click(hamburgerMenu);
+	}
+	
+	public void clickMainSection()
+	{
+		String sectionText = Keywords.getText(mainSection);
+		System.out.println("Selected text is: " + sectionText);
+		Keywords.waitForElementPresence(mainSection, "10");
+		Keywords.waitForElementToBeClickable(mainSection, "10");
+		Keywords.click(mainSection);
+	}
+	
+	public void clickSubSection()
+	{
+		String subSectionText = Keywords.getText(subSection);
+		System.out.println("Sub Section text is: " + subSectionText);
+		Keywords.waitForElementPresence(subSection, "10");
+		Keywords.waitForElementToBeClickable(subSection, "10");
+		Keywords.click(subSection);
+	}
+	
+	public void clickSelectedCategorySection()
+	{
+		String selectedCategoryText = Keywords.getText(selectedCategorySection);
+		System.out.println("Selected Category text is: " + selectedCategoryText);
+		Keywords.waitForElementPresence(selectedCategorySection, "10");
+		Keywords.waitForElementToBeClickable(selectedCategorySection, "10");
+		Keywords.click(selectedCategorySection);
+	}
+	
+	public void clickselectedCategorySubSection()
+	{
+		String selectedCategorySubText = Keywords.getText(selectedCategorySubSection);
+		System.out.println("Selected category Sub Section text is: " + selectedCategorySubText);
+		Keywords.waitForElementPresence(selectedCategorySubSection, "10");
+		Keywords.waitForElementToBeClickable(selectedCategorySubSection, "10");
+		Keywords.click(selectedCategorySubSection);
+	}
+	
+	
+}

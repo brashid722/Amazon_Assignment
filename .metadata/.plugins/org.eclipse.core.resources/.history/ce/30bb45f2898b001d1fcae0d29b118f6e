@@ -1,0 +1,6 @@
+url = https://www.amazon.in/
+browser=chrome
+sort_value= high to low
+field_name = Sort by:
+IMPLICIT_WAIT = 10
+PAGE_LOAD_TIMEOUT = 20

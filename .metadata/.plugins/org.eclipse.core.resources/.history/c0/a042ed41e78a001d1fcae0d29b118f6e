@@ -1,0 +1,5 @@
+package com.clipboard.qa.util;
+
+public class TestUtil {
+
+}

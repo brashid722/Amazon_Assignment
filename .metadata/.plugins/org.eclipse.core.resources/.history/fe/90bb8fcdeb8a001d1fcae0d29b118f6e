@@ -1,0 +1,9 @@
+package com.clipboard.qa.util;
+
+import java.time.Duration;
+
+public class TestUtil {
+	
+	
+
+}

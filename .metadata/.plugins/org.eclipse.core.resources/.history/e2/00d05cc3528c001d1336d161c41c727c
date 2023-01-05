@@ -1,0 +1,67 @@
+package com.clipboard.qa.testcases;
+
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.clipboard.qa.pages.AmazonLandingPage;
+import com.clipboard.qa.pages.ResultsPage;
+import com.clipboard.qa.reports.Reports;
+import com.clipboard.qa.utils.TestBase;
+
+public class DisplayResult extends TestBase
+{
+	WebDriver driver;
+	AmazonLandingPage landingpage;
+	ResultsPage resultspage;
+	Properties prop = new Properties();
+	
+	public DisplayResult()
+	{
+		super();
+	}
+	
+	@BeforeClass
+	
+	public void setUp() throws IOException
+	{
+		driver = initializeBrowser();
+		landingpage = new AmazonLandingPage(driver);
+		resultspage = new ResultsPage(driver);
+		
+	}
+
+	@Test
+	public void displayResult() throws IOException
+	{	
+		landingpage.clickHamburgerMenu();
+		landingpage.clickMainSection();
+		landingpage.clickSubSection();
+		landingpage.clickSelectedCategorySection();
+		landingpage.clickselectedCategorySubSection();
+		resultspage.selectBrandValue();
+		boolean status = resultspage.validateResultsPagePresence();
+		Assert.assertTrue(status, "Results page displayed successfully!");
+	}
+	
+	
+	  @Test 
+	  public void sortedResultsValidation() 
+	  {
+		  resultspage.selectDropdownValue("Price: High to Low"); 
+		  resultspage.clickSecondHighestPrice();
+	  
+	  }
+	 
+	
+	
+	@AfterClass
+	public void tearDown()
+	{
+		driver.close();
+	}
+}

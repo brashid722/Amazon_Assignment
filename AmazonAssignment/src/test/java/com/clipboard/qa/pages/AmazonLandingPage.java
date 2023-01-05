@@ -1,0 +1,76 @@
+package com.clipboard.qa.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import com.aventstack.extentreports.Status;
+import com.clipboard.qa.utils.Keywords;
+import com.clipboard.qa.utils.TestBase;
+
+public class AmazonLandingPage extends TestBase
+{
+	
+	WebDriver ldriver;
+	Keywords base = new Keywords(ldriver);
+	
+	public AmazonLandingPage(WebDriver rdriver)
+	{
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+	}
+	
+	@FindBy(id="nav-hamburger-menu")
+	WebElement hamburgerMenu;
+	
+	@FindBy(xpath="//div[contains(text(),'shop by category')]")
+	WebElement sectionCategory;
+	
+	@FindBy(xpath="//*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']")
+	WebElement mainSection;
+	
+	@FindBy(xpath="//div[contains(text(),'tv, audio & cameras')]")
+	WebElement subSectionCategory;
+	
+	@FindBy(xpath="//a[contains(text(),'Televisions')]")
+	WebElement selectedCategorySubSection;
+	
+	public void goToURL()
+	{
+		driver.get("https://www.amazon.in/");
+	}
+	
+	public String getText(WebElement element)
+	{
+		test.log(Status.INFO, "Text for element fetched is: " + element.getText());
+		Keywords.waitForElementToLoad(element, "10");
+		return element.getText();
+	}
+	
+	public void clickHamburgerMenu()
+	{
+		Keywords.waitForElementToBeClickable(hamburgerMenu, "10");
+		Keywords.click(hamburgerMenu);
+	}
+	
+	public void clickMainSection()
+	{
+		Keywords.waitForElementPresence(sectionCategory, "10");
+		Keywords.waitForElementPresence(mainSection, "10");
+		Keywords.waitForElementToBeClickable(mainSection, "10");
+		String sectionText = Keywords.getText(mainSection);	
+		Keywords.click(mainSection);
+		test.log(Status.INFO, "Main section category text is : " + sectionText);
+	}
+	
+	public void clickSubSection()
+	{
+		Keywords.waitForElementPresence(subSectionCategory, "10");
+		Keywords.waitForElementPresence(selectedCategorySubSection, "10");
+		Keywords.waitForElementToBeClickable(selectedCategorySubSection, "10");
+		String subSectionText = Keywords.getText(selectedCategorySubSection);
+		Keywords.click(selectedCategorySubSection);
+		test.log(Status.INFO, "Sub Section text is: " + subSectionText);
+	}
+	
+}

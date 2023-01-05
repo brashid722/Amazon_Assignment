@@ -1,0 +1,88 @@
+package com.clipboard.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import com.clipboard.qa.base.Keywords;
+import com.clipboard.qa.base.TestBase;
+
+public class AmazonLandingPage extends TestBase
+{
+	
+	WebDriver driver;
+	
+	Keywords base = new Keywords(driver);
+	
+	public AmazonLandingPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	
+	By hamburgerMenu = By.id("nav-hamburger-menu");
+	
+	By mainSection = By.xpath("//div[contains(text(),'shop by category')]");
+	
+	By subSection = By.xpath("//*[@class='hmenu-item']//*[text() = 'TV, Appliances, Electronics']");
+	
+	By selectedCategorySection = By.xpath("//div[contains(text(),'tv, audio & cameras')]");
+	
+	By selectedCategorySubSection = By.xpath("//a[contains(text(),'Televisions')]");
+	
+	public void goToURL()
+	{
+		driver.get("https://www.amazon.in/");
+	}
+	
+	public String getText(By element)
+	{
+		System.out.println("Text for element fetched is:" + ((WebElement) element).getText());
+		Keywords.waitForElementToLoad(element, "10");
+		return ((WebElement) element).getText();
+	}
+	
+	public void clickHamburgerMenu()
+	{
+		String hamburgerText = Keywords.getText(hamburgerMenu);
+		System.out.println("Hamburger text is: " + hamburgerText);
+		Keywords.waitForElementToBeClickable(hamburgerMenu, "10");
+		Keywords.click(hamburgerMenu);
+	}
+	
+	public void clickMainSection()
+	{
+		String sectionText = Keywords.getText(mainSection);
+		System.out.println("Selected text is: " + sectionText);
+		Keywords.waitForElementPresence(mainSection, "10");
+		Keywords.waitForElementToBeClickable(mainSection, "10");
+		Keywords.click(mainSection);
+	}
+	
+	public void clickSubSection()
+	{
+		String subSectionText = Keywords.getText(subSection);
+		System.out.println("Sub Section text is: " + subSectionText);
+		Keywords.waitForElementPresence(subSection, "10");
+		Keywords.waitForElementToBeClickable(subSection, "10");
+		Keywords.click(subSection);
+	}
+	
+	public void clickSelectedCategorySection()
+	{
+		String selectedCategoryText = Keywords.getText(selectedCategorySection);
+		System.out.println("Selected Category text is: " + selectedCategoryText);
+		Keywords.waitForElementPresence(selectedCategorySection, "10");
+		Keywords.waitForElementToBeClickable(selectedCategorySection, "10");
+		Keywords.click(selectedCategorySection);
+	}
+	
+	public void clickselectedCategorySubSection()
+	{
+		String selectedCategorySubText = Keywords.getText(selectedCategorySubSection);
+		System.out.println("Selected category Sub Section text is: " + selectedCategorySubText);
+		Keywords.waitForElementPresence(selectedCategorySubSection, "10");
+		Keywords.waitForElementToBeClickable(selectedCategorySubSection, "10");
+		Keywords.click(selectedCategorySubSection);
+	}
+	
+	
+}

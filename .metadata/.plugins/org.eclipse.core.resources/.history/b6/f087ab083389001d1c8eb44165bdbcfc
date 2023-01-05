@@ -1,0 +1,12 @@
+package clipBoardHealth.TestComponents;
+
+import org.testng.ITestListener;
+
+import com.aventstack.extentreports.ExtentReports;
+
+public class Listeners implements ITestListener
+{
+	ExtentReports extent = ExtentReporterNG.getReportObject();
+	
+
+}
