@@ -50,3 +50,21 @@ To update or to run on different browser, update the browser name in **Config.pr
 **Reporting**  
 
 Default reporting provided by the framwork is TestNG report. Implemented Extent Report framework, taking screenshot for failed test cases only.
+
+## Selenium Grid Setup Instruction
+Download the Selenium Server: https://www.selenium.dev/downloads/  
+
+Download Browser drivers and place in the same path where Selenium server is located  
+
+**Start the Hub**  
+which eventually Starts Router, Distributor, Session Map , New Session Queue, Event Bus  
+
+'java -jar [SeleniumJarname] hub'  
+
+**Start the Node in Same Machine where Hub is running**  
+
+'java -jar [SeleniumJarname] node --detect-drivers true'  
+
+**Start the Node in different Physical Machine**  
+
+'java -jar [SeleniumJarname] node --detect-drivers true -- publish-events tcp://[ipaddressofhub] --subscribe-events tcp:// [ipaddressofhub]'  
